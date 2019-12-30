@@ -6,11 +6,14 @@
 //  Copyright © 2019 王颖博. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "NimbusModels.h"
 
+#import "ViewController.h"
 #import "FBNameContentCellObject.h"
 #import "UIAlertController+FB.h"
+#import "UIViewController+YBNaviAttributes.h"
+#import "YBCollectionVC.h"
+
 
 @interface ViewController ()<UITableViewDelegate,UITextFieldDelegate>
 
@@ -30,15 +33,18 @@
     
     [self configTableView];
     
+    [self configData];
+    
     [self configNimbusProfile];
     
-    [self configData];
+    [self configNimbusTableData];
 }
 
 #pragma mark - configUI
 
 - (void)configNavigation {
-    self.title = @"demo";
+    [self yb_setTitleAttributesWithTitle:@"table nimbus" font:[UIFont systemFontOfSize:17.] color:[UIColor blackColor]];
+    [self yb_setRightBarButtonItemWithTitle:@"collection" font:[UIFont systemFontOfSize:17.] color:[UIColor redColor] action:@selector(rightButtonClick:)];
 }
 
 - (UITableView *)tableView {
@@ -63,6 +69,19 @@
 
 #pragma mark - configData
 
+- (void)configData {
+    
+}
+
+#pragma mark - actions
+
+- (void)rightButtonClick:(id)sender {
+    YBCollectionVC *collectionVC = [[YBCollectionVC alloc] init ];
+    [self.navigationController pushViewController:collectionVC animated:YES];
+}
+
+#pragma mark - nimbus
+
 /**
  配置Nimbus
  */
@@ -75,7 +94,7 @@
 /**
  配置数据源
  */
-- (void)configData {
+- (void)configNimbusTableData {
     NSMutableArray *mutArr = [NSMutableArray array];
     NSArray *dataArray = @[];
     

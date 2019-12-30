@@ -22,6 +22,10 @@
 		D177B87F231514C900CBDC9A /* FBNameContentCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D177B87C231514C900CBDC9A /* FBNameContentCellObject.m */; };
 		D177B883231516F800CBDC9A /* NSString+FBAdditional.m in Sources */ = {isa = PBXBuildFile; fileRef = D177B881231516F800CBDC9A /* NSString+FBAdditional.m */; };
 		D177B88623151BA300CBDC9A /* UIAlertController+FB.m in Sources */ = {isa = PBXBuildFile; fileRef = D177B88423151BA300CBDC9A /* UIAlertController+FB.m */; };
+		D1BF2A2223B9FE5500EFD75B /* YBCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BF2A2123B9FE5500EFD75B /* YBCollectionVC.m */; };
+		D1BF2A2523BA002600EFD75B /* UIViewController+YBNaviAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BF2A2423BA002600EFD75B /* UIViewController+YBNaviAttributes.m */; };
+		D1BF2A2823BA05E000EFD75B /* YBImageCollectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BF2A2723BA05E000EFD75B /* YBImageCollectionCellObject.m */; };
+		D1BF2A2B23BA062200EFD75B /* YBImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BF2A2A23BA062200EFD75B /* YBImageCollectionCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,14 @@
 		D177B882231516F800CBDC9A /* NSString+FBAdditional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FBAdditional.h"; sourceTree = "<group>"; };
 		D177B88423151BA300CBDC9A /* UIAlertController+FB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+FB.m"; sourceTree = "<group>"; };
 		D177B88523151BA300CBDC9A /* UIAlertController+FB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+FB.h"; sourceTree = "<group>"; };
+		D1BF2A2023B9FE5500EFD75B /* YBCollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBCollectionVC.h; sourceTree = "<group>"; };
+		D1BF2A2123B9FE5500EFD75B /* YBCollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBCollectionVC.m; sourceTree = "<group>"; };
+		D1BF2A2323BA002600EFD75B /* UIViewController+YBNaviAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YBNaviAttributes.h"; sourceTree = "<group>"; };
+		D1BF2A2423BA002600EFD75B /* UIViewController+YBNaviAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YBNaviAttributes.m"; sourceTree = "<group>"; };
+		D1BF2A2623BA05E000EFD75B /* YBImageCollectionCellObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBImageCollectionCellObject.h; sourceTree = "<group>"; };
+		D1BF2A2723BA05E000EFD75B /* YBImageCollectionCellObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBImageCollectionCellObject.m; sourceTree = "<group>"; };
+		D1BF2A2923BA062200EFD75B /* YBImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBImageCollectionCell.h; sourceTree = "<group>"; };
+		D1BF2A2A23BA062200EFD75B /* YBImageCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBImageCollectionCell.m; sourceTree = "<group>"; };
 		F9819ECA8D67DEC47D7A1BF0 /* libPods-NimbusDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NimbusDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,11 +156,14 @@
 			isa = PBXGroup;
 			children = (
 				D177B880231516C800CBDC9A /* Vendor */,
+				D1BF2A1E23B9FD6500EFD75B /* CollectionCells */,
 				D177B878231514B700CBDC9A /* TableCells */,
 				D177B846231512D200CBDC9A /* AppDelegate.h */,
 				D177B847231512D200CBDC9A /* AppDelegate.m */,
 				D177B849231512D200CBDC9A /* ViewController.h */,
 				D177B84A231512D200CBDC9A /* ViewController.m */,
+				D1BF2A2023B9FE5500EFD75B /* YBCollectionVC.h */,
+				D1BF2A2123B9FE5500EFD75B /* YBCollectionVC.m */,
 				D177B84C231512D200CBDC9A /* Main.storyboard */,
 				D177B84F231512D300CBDC9A /* Assets.xcassets */,
 				D177B851231512D300CBDC9A /* LaunchScreen.storyboard */,
@@ -187,10 +202,10 @@
 		D177B879231514C900CBDC9A /* FBNameContentNICell */ = {
 			isa = PBXGroup;
 			children = (
-				D177B87D231514C900CBDC9A /* FBNameContentCell.h */,
-				D177B87A231514C900CBDC9A /* FBNameContentCell.m */,
 				D177B87B231514C900CBDC9A /* FBNameContentCellObject.h */,
 				D177B87C231514C900CBDC9A /* FBNameContentCellObject.m */,
+				D177B87D231514C900CBDC9A /* FBNameContentCell.h */,
+				D177B87A231514C900CBDC9A /* FBNameContentCell.m */,
 			);
 			path = FBNameContentNICell;
 			sourceTree = "<group>";
@@ -200,10 +215,31 @@
 			children = (
 				D177B88523151BA300CBDC9A /* UIAlertController+FB.h */,
 				D177B88423151BA300CBDC9A /* UIAlertController+FB.m */,
+				D1BF2A2323BA002600EFD75B /* UIViewController+YBNaviAttributes.h */,
+				D1BF2A2423BA002600EFD75B /* UIViewController+YBNaviAttributes.m */,
 				D177B882231516F800CBDC9A /* NSString+FBAdditional.h */,
 				D177B881231516F800CBDC9A /* NSString+FBAdditional.m */,
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		D1BF2A1E23B9FD6500EFD75B /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				D1BF2A1F23B9FD8700EFD75B /* YBImageCollectionNICell */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		D1BF2A1F23B9FD8700EFD75B /* YBImageCollectionNICell */ = {
+			isa = PBXGroup;
+			children = (
+				D1BF2A2623BA05E000EFD75B /* YBImageCollectionCellObject.h */,
+				D1BF2A2723BA05E000EFD75B /* YBImageCollectionCellObject.m */,
+				D1BF2A2923BA062200EFD75B /* YBImageCollectionCell.h */,
+				D1BF2A2A23BA062200EFD75B /* YBImageCollectionCell.m */,
+			);
+			path = YBImageCollectionNICell;
 			sourceTree = "<group>";
 		};
 		F34634F66B4121F899FE9DE5 /* Frameworks */ = {
@@ -418,9 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BF2A2523BA002600EFD75B /* UIViewController+YBNaviAttributes.m in Sources */,
 				D177B88623151BA300CBDC9A /* UIAlertController+FB.m in Sources */,
+				D1BF2A2B23BA062200EFD75B /* YBImageCollectionCell.m in Sources */,
 				D177B883231516F800CBDC9A /* NSString+FBAdditional.m in Sources */,
+				D1BF2A2823BA05E000EFD75B /* YBImageCollectionCellObject.m in Sources */,
 				D177B84B231512D200CBDC9A /* ViewController.m in Sources */,
+				D1BF2A2223B9FE5500EFD75B /* YBCollectionVC.m in Sources */,
 				D177B856231512D300CBDC9A /* main.m in Sources */,
 				D177B87E231514C900CBDC9A /* FBNameContentCell.m in Sources */,
 				D177B848231512D200CBDC9A /* AppDelegate.m in Sources */,

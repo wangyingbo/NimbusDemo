@@ -39,6 +39,36 @@ static CGFloat kDefaultCellMinHeight = 50.f;
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat titleW = self.cellObject.titleWidth>0?self.cellObject.titleWidth:kDefaultLeftTitleWidth;
+    self.nameLabel.frame = CGRectMake(_leftMargin, 0, titleW, self.contentView.frame.size.height);
+    
+    if (self.cellObject.titleSpreadFull) {
+        titleW = [UIScreen mainScreen].bounds.size.width - 2*_leftMargin;
+    }
+    CGFloat arrowX = [UIScreen mainScreen].bounds.size.width - (self.cellObject.arrowShow?_leftMargin/2:_leftMargin) -  (self.cellObject.arrowShow?_arrow_w:0);
+    CGFloat contentW = arrowX - titleW - _leftMargin;
+    if (self.cellObject.titleSpreadFull) {
+        contentW = arrowX - kDefaultLeftTitleWidth - _leftMargin;
+    }
+    if (self.cellObject.contentSpreadFull) {
+        contentW = arrowX - _leftMargin;
+    }
+    CGFloat contentX = CGRectGetMaxX(self.nameLabel.frame);
+    if (self.cellObject.titleSpreadFull) {
+        contentX = _leftMargin + kDefaultLeftTitleWidth;
+    }
+    if (self.cellObject.contentSpreadFull) {
+        contentX = _leftMargin;
+    }
+    
+    self.arrowButton.frame = CGRectMake(arrowX, self.contentView.frame.size.height/2 - _arrow_w/2, _arrow_w, _arrow_w);
+    self.contentLabel.frame = CGRectMake(contentX, 0, contentW, self.contentView.frame.size.height);
+}
+
+#pragma mark - configUI
 - (void)setSubViewsUI {
     
     self.contentView.backgroundColor = [UIColor whiteColor];
@@ -70,35 +100,6 @@ static CGFloat kDefaultCellMinHeight = 50.f;
     [arrowButton setImage:[UIImage imageNamed:@"arrow_icon"] forState:UIControlStateNormal];
     [self.contentView addSubview:arrowButton];
     self.arrowButton = arrowButton;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    CGFloat titleW = self.cellObject.titleWidth>0?self.cellObject.titleWidth:kDefaultLeftTitleWidth;
-    self.nameLabel.frame = CGRectMake(_leftMargin, 0, titleW, self.contentView.frame.size.height);
-    
-    if (self.cellObject.titleSpreadFull) {
-        titleW = [UIScreen mainScreen].bounds.size.width - 2*_leftMargin;
-    }
-    CGFloat arrowX = [UIScreen mainScreen].bounds.size.width - (self.cellObject.arrowShow?_leftMargin/2:_leftMargin) -  (self.cellObject.arrowShow?_arrow_w:0);
-    CGFloat contentW = arrowX - titleW - _leftMargin;
-    if (self.cellObject.titleSpreadFull) {
-        contentW = arrowX - kDefaultLeftTitleWidth - _leftMargin;
-    }
-    if (self.cellObject.contentSpreadFull) {
-        contentW = arrowX - _leftMargin;
-    }
-    CGFloat contentX = CGRectGetMaxX(self.nameLabel.frame);
-    if (self.cellObject.titleSpreadFull) {
-        contentX = _leftMargin + kDefaultLeftTitleWidth;
-    }
-    if (self.cellObject.contentSpreadFull) {
-        contentX = _leftMargin;
-    }
-    
-    self.arrowButton.frame = CGRectMake(arrowX, self.contentView.frame.size.height/2 - _arrow_w/2, _arrow_w, _arrow_w);
-    self.contentLabel.frame = CGRectMake(contentX, 0, contentW, self.contentView.frame.size.height);
 }
 
 #pragma mark - NICell
